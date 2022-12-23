@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  mcx:
+    container_name: mcx
+    build: ./container_for_mcx/
+    image: image_for_mcx
+    volumes:
+      - ./predict_mcx/:/app/predict_mcx
+      - ./.bashrc:$HOME/.bashrc
+    tty: true
+    stdin_open: true
